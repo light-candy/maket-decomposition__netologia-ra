@@ -9,7 +9,7 @@ export function Featured(props) {
             <img className="featured__image" src={image} />
             </a>
             <h5><a href={link}>{title}</a></h5>
-            <p>{text}</p>
+          <p>{text}</p>
         </div>
     );
 }

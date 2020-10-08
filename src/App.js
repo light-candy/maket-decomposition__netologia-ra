@@ -8,6 +8,8 @@ import { SearchBar } from './SearchBar';
 import { Banner } from './Banner';
 import { Widget } from './Widget';
 import { WeatherWidget } from './WeatherWidget';
+import { TVWidgetItem } from './TVWidgetItem';
+import { PopularWidgetItem } from './PopularWidgetItem';
 
 const rates = [
 {currency:"USD MOEX", rate:63.52, growth:"+0.09", link:"#"},
@@ -65,18 +67,29 @@ function App() {
                          nextLink="#"
                          nextName="Днём"
                          nextTemp="+20" />
-          <Widget title="Посещаемое" link="#" data={popular} />
+          <Widget title="Посещаемое" link="#">
+            <ul>
+              {popular.map((item) => <PopularWidgetItem {...item} />)}
+            </ul>
+          </Widget>
         </div>
         <div className="widgets-col">
           <Widget title="Карта Германии" link="#">
             <a href="#">Расписания</a>
           </Widget>
-          <Widget title="Телепрограмма" data={tv}>
+          <Widget title="Телепрограмма">
             <button className="button_onair">В эфире</button>
+            <ul>
+              {tv.map((item) => <TVWidgetItem {...item} />)}
+            </ul>
           </Widget>
         </div>
         <div className="widgets-col">
-          <Widget title="В эфире" link="#" data={onAir} />
+          <Widget title="В эфире" link="#">
+            <ul>
+              {onAir.map((item) => <TVWidgetItem {...item} />)}
+            </ul>
+          </Widget>
         </div>
        </div>
       </>
