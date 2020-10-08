@@ -6,7 +6,7 @@ export function NewsList(props) {
     const newsItems = props.news.map((item) => <NewsItem {...item} />);
     return(
         <ul className="news__list">
-        {newsItems}
+         {newsItems}
         </ul>
     );
 }

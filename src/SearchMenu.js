@@ -11,10 +11,11 @@ export function SearchMenu() {
         {link:"#", name:"Эфир"}
     ];
     return(
-        <ul className="search__menu">{
-             menuItems.map((item) => <li><a href={item.link}>{item.name}</a></li>)
-        }
+        <ul className="search__menu">
+          {menuItems.map((item) =>
+           <li><a href={item.link}>{item.name}</a></li>
+          )}
           <li href="#">ещё</li>
-         </ul>
+        </ul>
     );
 }

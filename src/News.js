@@ -6,22 +6,19 @@ import { NewsFilter } from './NewsFilter';
 
 /*Отображает список новостей в зависимости от выбранного таба-фильтра. Передаёт
  обработчик выбора и выбранный таб в NewsFilter, передаёт выбранный список новостей в NewsList*/
-const news = [
-    {link:"#", icon:"...", text:"Путин упростил получение автомобильных номеров"},
-    {link:"#", icon:"...", text:"В команде Зеленского раскрыли план реформ на Украине"}
-];
 
-export function News(){
+
+export function News(props){
   function onSelect(){
    
   }
-    return(
+  return(
     <div className="news">
-    <div className="news__nav">
-      <NewsFilter selected={"Сейчас в СМИ"} onSelect={onSelect}/>
-      <Date />
+      <div className="news__nav">
+       <NewsFilter selected={"Сейчас в СМИ"} onSelect={onSelect} />
+       <Date />
+      </div>
+      <NewsList news={props.news} />
     </div>
-        <NewsList news={news} />
-        </div>
-    );
+  );
 }
